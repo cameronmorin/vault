@@ -1,7 +1,6 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <timer.h>
-#include <seven_seg.h>
 #include "io.c"
 
 //Global Variables
@@ -183,7 +182,7 @@ void Tick_Keypad() {
 			break;
 		case Keypad_First:
 			press = 0;
-			PORTC = 0xEF; // Enable col 4 with 0, disable others with 1’s
+			PORTC = 0xEF; // Enable col 4 with 0, disable others with 1ï¿½s
     		asm("nop"); // add a delay to allow PORTC to stabilize before checking
     		if (GetBit(PINC,0)==0) { sm1_output = '1'; press = 1; }
     		if (GetBit(PINC,1)==0) { sm1_output = '2'; press = 1; }
@@ -191,7 +190,7 @@ void Tick_Keypad() {
     		if (GetBit(PINC,3)==0) { sm1_output = 'A'; press = 1; }
 
     		// Check keys in col 2
-    		PORTC = 0xDF; // Enable col 5 with 0, disable others with 1’s
+    		PORTC = 0xDF; // Enable col 5 with 0, disable others with 1ï¿½s
     		asm("nop"); // add a delay to allow PORTC to stabilize before checking
     		if (GetBit(PINC,0)==0) { sm1_output = '4'; press = 1; }
 			if (GetBit(PINC,1)==0) { sm1_output = '5'; press = 1; }
@@ -199,7 +198,7 @@ void Tick_Keypad() {
 			if (GetBit(PINC,3)==0) { sm1_output = 'B'; press = 1; }
 
     		// Check keys in col 3
-   			PORTC = 0xBF; // Enable col 6 with 0, disable others with 1’s
+   			PORTC = 0xBF; // Enable col 6 with 0, disable others with 1ï¿½s
     		asm("nop"); // add a delay to allow PORTC to stabilize before checking
 			if (GetBit(PINC,0)==0) { sm1_output = '7'; press = 1; }
 			if (GetBit(PINC,1)==0) { sm1_output = '8'; press = 1; }
@@ -207,7 +206,7 @@ void Tick_Keypad() {
 			if (GetBit(PINC,3)==0) { sm1_output = 'C'; press = 1; }
     		
     		// Check keys in col 4
-			PORTC = 0x7F; // Enable col 6 with 0, disable others with 1’s
+			PORTC = 0x7F; // Enable col 6 with 0, disable others with 1ï¿½s
 			asm("nop"); // add a delay to allow PORTC to stabilize before checking
 			if (GetBit(PINC,0)==0) { sm1_output = '*'; press = 1; }
 			if (GetBit(PINC,1)==0) { sm1_output = '0'; press = 1; }
@@ -216,7 +215,7 @@ void Tick_Keypad() {
 			break;
 		case Keypad_Second:
 			press = 0;
-			PORTC = 0xEF; // Enable col 4 with 0, disable others with 1’s
+			PORTC = 0xEF; // Enable col 4 with 0, disable others with 1ï¿½s
     		asm("nop"); // add a delay to allow PORTC to stabilize before checking
     		if (GetBit(PINC,0)==0) { sm2_output = '1'; press = 1; }
     		if (GetBit(PINC,1)==0) { sm2_output = '2'; press = 1; }
@@ -224,7 +223,7 @@ void Tick_Keypad() {
     		if (GetBit(PINC,3)==0) { sm2_output = 'A'; press = 1; }
 
     		// Check keys in col 2
-    		PORTC = 0xDF; // Enable col 5 with 0, disable others with 1’s
+    		PORTC = 0xDF; // Enable col 5 with 0, disable others with 1ï¿½s
     		asm("nop"); // add a delay to allow PORTC to stabilize before checking
     		if (GetBit(PINC,0)==0) { sm2_output = '4'; press = 1; }
 			if (GetBit(PINC,1)==0) { sm2_output = '5'; press = 1; }
@@ -232,7 +231,7 @@ void Tick_Keypad() {
 			if (GetBit(PINC,3)==0) { sm2_output = 'B'; press = 1; }
 
     		// Check keys in col 3
-   			PORTC = 0xBF; // Enable col 6 with 0, disable others with 1’s
+   			PORTC = 0xBF; // Enable col 6 with 0, disable others with 1ï¿½s
     		asm("nop"); // add a delay to allow PORTC to stabilize before checking
 			if (GetBit(PINC,0)==0) { sm2_output = '7'; press = 1; }
 			if (GetBit(PINC,1)==0) { sm2_output = '8'; press = 1; }
@@ -240,7 +239,7 @@ void Tick_Keypad() {
 			if (GetBit(PINC,3)==0) { sm2_output = 'C'; press = 1; }
     		
     		// Check keys in col 4
-			PORTC = 0x7F; // Enable col 6 with 0, disable others with 1’s
+			PORTC = 0x7F; // Enable col 6 with 0, disable others with 1ï¿½s
 			asm("nop"); // add a delay to allow PORTC to stabilize before checking
 			if (GetBit(PINC,0)==0) { sm2_output = '*'; press = 1; }
 			if (GetBit(PINC,1)==0) { sm2_output = '0'; press = 1; }
@@ -249,7 +248,7 @@ void Tick_Keypad() {
 			break;
 		case Keypad_Third:
 		press = 0;
-			PORTC = 0xEF; // Enable col 4 with 0, disable others with 1’s
+			PORTC = 0xEF; // Enable col 4 with 0, disable others with 1ï¿½s
     		asm("nop"); // add a delay to allow PORTC to stabilize before checking
     		if (GetBit(PINC,0)==0) { sm3_output = '1'; press = 1; }
     		if (GetBit(PINC,1)==0) { sm3_output = '2'; press = 1; }
@@ -257,7 +256,7 @@ void Tick_Keypad() {
     		if (GetBit(PINC,3)==0) { sm3_output = 'A'; press = 1; }
 
     		// Check keys in col 2
-    		PORTC = 0xDF; // Enable col 5 with 0, disable others with 1’s
+    		PORTC = 0xDF; // Enable col 5 with 0, disable others with 1ï¿½s
     		asm("nop"); // add a delay to allow PORTC to stabilize before checking
     		if (GetBit(PINC,0)==0) { sm3_output = '4'; press = 1; }
 			if (GetBit(PINC,1)==0) { sm3_output = '5'; press = 1; }
@@ -265,7 +264,7 @@ void Tick_Keypad() {
 			if (GetBit(PINC,3)==0) { sm3_output = 'B'; press = 1; }
 
     		// Check keys in col 3
-   			PORTC = 0xBF; // Enable col 6 with 0, disable others with 1’s
+   			PORTC = 0xBF; // Enable col 6 with 0, disable others with 1ï¿½s
     		asm("nop"); // add a delay to allow PORTC to stabilize before checking
 			if (GetBit(PINC,0)==0) { sm3_output = '7'; press = 1; }
 			if (GetBit(PINC,1)==0) { sm3_output = '8'; press = 1; }
@@ -273,7 +272,7 @@ void Tick_Keypad() {
 			if (GetBit(PINC,3)==0) { sm3_output = 'C'; press = 1; }
     		
     		// Check keys in col 4
-			PORTC = 0x7F; // Enable col 6 with 0, disable others with 1’s
+			PORTC = 0x7F; // Enable col 6 with 0, disable others with 1ï¿½s
 			asm("nop"); // add a delay to allow PORTC to stabilize before checking
 			if (GetBit(PINC,0)==0) { sm3_output = '*'; press = 1; }
 			if (GetBit(PINC,1)==0) { sm3_output = '0'; press = 1; }
@@ -282,7 +281,7 @@ void Tick_Keypad() {
 			break;
 		case Keypad_Fourth:
 			press = 0;
-			PORTC = 0xEF; // Enable col 4 with 0, disable others with 1’s
+			PORTC = 0xEF; // Enable col 4 with 0, disable others with 1ï¿½s
 			asm("nop"); // add a delay to allow PORTC to stabilize before checking
 			if (GetBit(PINC,0)==0) { sm4_output = '1'; press = 1; }
 			if (GetBit(PINC,1)==0) { sm4_output = '2'; press = 1; }
@@ -290,7 +289,7 @@ void Tick_Keypad() {
 			if (GetBit(PINC,3)==0) { sm4_output = 'A'; press = 1; }
 
 			// Check keys in col 2
-			PORTC = 0xDF; // Enable col 5 with 0, disable others with 1’s
+			PORTC = 0xDF; // Enable col 5 with 0, disable others with 1ï¿½s
 			asm("nop"); // add a delay to allow PORTC to stabilize before checking
 			if (GetBit(PINC,0)==0) { sm4_output = '4'; press = 1; }
 			if (GetBit(PINC,1)==0) { sm4_output = '5'; press = 1; }
@@ -298,7 +297,7 @@ void Tick_Keypad() {
 			if (GetBit(PINC,3)==0) { sm4_output = 'B'; press = 1; }
 
 			// Check keys in col 3
-			PORTC = 0xBF; // Enable col 6 with 0, disable others with 1’s
+			PORTC = 0xBF; // Enable col 6 with 0, disable others with 1ï¿½s
 			asm("nop"); // add a delay to allow PORTC to stabilize before checking
 			if (GetBit(PINC,0)==0) { sm4_output = '7'; press = 1; }
 			if (GetBit(PINC,1)==0) { sm4_output = '8'; press = 1; }
@@ -306,7 +305,7 @@ void Tick_Keypad() {
 			if (GetBit(PINC,3)==0) { sm4_output = 'C'; press = 1; }
 			
 			// Check keys in col 4
-			PORTC = 0x7F; // Enable col 6 with 0, disable others with 1’s
+			PORTC = 0x7F; // Enable col 6 with 0, disable others with 1ï¿½s
 			asm("nop"); // add a delay to allow PORTC to stabilize before checking
 			if (GetBit(PINC,0)==0) { sm4_output = '*'; press = 1; }
 			if (GetBit(PINC,1)==0) { sm4_output = '0'; press = 1; }
@@ -316,7 +315,7 @@ void Tick_Keypad() {
 		case Keypad_Wait:
 			break;
 		case Keypad_Lock:
-			PORTC = 0xEF; // Enable col 4 with 0, disable others with 1’s
+			PORTC = 0xEF; // Enable col 4 with 0, disable others with 1ï¿½s
 			asm("nop"); // add a delay to allow PORTC to stabilize before checking
 			if (GetBit(PINC,0)==0) { sm4_output = '1'; lock = 0; }
 			if (GetBit(PINC,1)==0) { sm4_output = '2'; lock = 0; }
@@ -324,7 +323,7 @@ void Tick_Keypad() {
 			if (GetBit(PINC,3)==0) { sm4_output = 'A'; lock = 0; }
 
 			// Check keys in col 2
-			PORTC = 0xDF; // Enable col 5 with 0, disable others with 1’s
+			PORTC = 0xDF; // Enable col 5 with 0, disable others with 1ï¿½s
 			asm("nop"); // add a delay to allow PORTC to stabilize before checking
 			if (GetBit(PINC,0)==0) { sm4_output = '4'; lock = 0; }
 			if (GetBit(PINC,1)==0) { sm4_output = '5'; lock = 0; }
@@ -332,7 +331,7 @@ void Tick_Keypad() {
 			if (GetBit(PINC,3)==0) { sm4_output = 'B'; lock = 0; }
 
 			// Check keys in col 3
-			PORTC = 0xBF; // Enable col 6 with 0, disable others with 1’s
+			PORTC = 0xBF; // Enable col 6 with 0, disable others with 1ï¿½s
 			asm("nop"); // add a delay to allow PORTC to stabilize before checking
 			if (GetBit(PINC,0)==0) { sm4_output = '7'; lock = 0; }
 			if (GetBit(PINC,1)==0) { sm4_output = '8'; lock = 0; }
@@ -340,7 +339,7 @@ void Tick_Keypad() {
 			if (GetBit(PINC,3)==0) { sm4_output = 'C'; lock = 0; }
 			
 			// Check keys in col 4
-			PORTC = 0x7F; // Enable col 6 with 0, disable others with 1’s
+			PORTC = 0x7F; // Enable col 6 with 0, disable others with 1ï¿½s
 			asm("nop"); // add a delay to allow PORTC to stabilize before checking
 			if (GetBit(PINC,0)==0) { sm4_output = '*'; lock = 0; }
 			if (GetBit(PINC,1)==0) { sm4_output = '0'; lock = 0; }
